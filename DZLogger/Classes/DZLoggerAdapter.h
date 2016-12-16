@@ -9,14 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 
-
-//#if DEBUG
-static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
-//#else
-//static const DDLogLevel ddLogLevel = DDLogLevelWarning;
-//#endif
+FOUNDATION_EXTERN  DDLogLevel  ddLogLevel;
 
 #define DZGlobalFileLogger  __DZGlobalFileLogger()
 
 FOUNDATION_EXTERN DDFileLogger*  __DZGlobalFileLogger() ;
-void DZSetupLogger();
+FOUNDATION_EXTERN void DZSetupLogger();
+FOUNDATION_EXTERN void DZChangeLogLevel(DDLogLevel logLevel);
