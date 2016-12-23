@@ -8,6 +8,10 @@
 
 #import "DZLoggerAdapter.h"
 
+
+
+
+
 DDLogLevel ddLogLevel = DDLogLevelError;
 
 static  NSString * const  kDZLogKey = @"log-level";
@@ -46,9 +50,7 @@ void DZSetupLogger(){
 
 
 void DZChangeLogLevel(DDLogLevel logLevel) {
-#ifndef DEBUG
     ddLogLevel = logLevel;
     [[NSUserDefaults standardUserDefaults] setInteger:logLevel forKey:kDZLogKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
-#endif
 }
